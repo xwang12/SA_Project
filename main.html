@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Software Advice Project</title>
+
+      <!-- Style Sheet-->
+      <link rel="stylesheet" href="css/main.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.css">
+   </head>
+   
+   <body ng-app="myApp">
+      <div class="container" ng-controller="MainController as ctrl">
+         <button type="button" class="btns" id="ab_btn" ng-click="ctrl.openModal()">Learn More</button>
+
+         <!-- Modal -->
+         <script type="text/ng-template" id="myModalContent">
+            <div class="modal-header">
+               <div id="close_icon">
+                  <img src="img/close_icon.png" ng-click="ctrl.cancel()">
+               </div>
+            </div>
+            <div class="modal-body">
+               <form name="form">
+                  <div layout-gt-xs="row">
+                     <div flex>
+                        <input type="text" class="form-control" ng-model="ctrl.name" ng-change="ctrl.nameChanged()" placeholder="Name">
+                        <div class="errMsgs">
+                           <span ng-if="!ctrl.isValid">Please input valid E-mail address.</span>
+                        </div>  
+                        <input type="email" class="form-control" ng-model="ctrl.email" name="email" ng-blur="ctrl.checkValid(form.email.$valid)" placeholder="E-mail">
+                        <input type="text" class="form-control" ng-model="ctrl.phone" placeholder="Phone">
+                        <input type="text" class="form-control" ng-model="ctrl.address" placeholder="Address">
+                        <input type="text" class="form-control" ng-model="ctrl.city" placeholder="City">
+                        <div layout-gt-xs="row">
+                           <div flex>
+                              <select class="form-control" ng-model="ctrl.stateOption">
+                                 <option ng-repeat="state in ctrl.states">{{state}}</option>
+                              </select>
+                           </div>
+                           <div flex class="left_space">
+                              <input type="text" class="form-control" ng-model="ctrl.zipcode" placeholder="Zip Code">
+                           </div>
+                        </div>
+                     </div>
+                     <div flex>
+                        <div class="img_container">
+                           <img class="imgs" ng-src="img/{{ctrl.imgName}}"/>
+                        </div>
+                        <div class="submit_btn_container">
+                           <button type="submit" class="btns" ng-click="ctrl.submit(form.email.$valid)">Submit</button>
+                        </div>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </script>
+
+         <aside></aside>
+
+      </div>
+      <!-- Libraries -->
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-aria.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular-messages.min.js"></script>
+      <script src = "https://ajax.googleapis.com/ajax/libs/angular_material/1.1.4/angular-material.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-animate.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-sanitize.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
+      <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+      
+      <!-- Javascript File -->
+      <script src = "js/angular-route.js"></script>
+      <script src = "js/main.controller.js"></script>
+      <script src = "js/modal.controller.js"></script>
+   </body>
+</html>
