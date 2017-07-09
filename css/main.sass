@@ -1,0 +1,72 @@
+/*AngularUI required*/
+
+.nav, .pagination, .carousel, .panel-title a {
+  cursor: pointer;
+}
+
+/*Main*/
+
+.container {
+  text-align: center;
+  padding: 10% 20%;
+  font-family: Verdana,Arial,Helvetica,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100%;
+  .btns {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #fff;
+    background-color: #ff851f;
+    border-color: #e56800;
+    transition: #ff851f .3s ease-out;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  }
+  .modal-header {
+    text-align: right;
+    background-color: #4d4d4d;
+    img {
+      width: 20px;
+    }
+  }
+  .modal-body {
+    .form-control {
+      margin-bottom: 10px;
+    }
+    .required {
+      text-align: left;
+    }
+    .invalid {
+      border-color: red;
+    }
+    .errMsgs {
+      text-align: left;
+      color: red;
+    }
+    .left_space {
+      padding-left: 5px;
+    }
+    .img_container .imgs {
+      width: 100%;
+    }
+    .submit_btn_container {
+      padding-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .container .modal-body .left_space {
+    padding-left: 0px;
+  }
+}
